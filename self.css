@@ -1,0 +1,52 @@
+body {
+    background-color: #F0F8FF;
+}
+
+
+/* 导航栏 */
+
+.heard {
+    width: 100vh;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* 主要内容 */
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 800px;
+    background-color: #8A2BE2;
+}
+
+
+/* 自我介绍 */
+
+.self-show {
+    position: absolute;
+    right: 0;
+    width: 500px;
+    height: 800px;
+}
+
+.home-page {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+.home-page h3 {
+    height: 50px;
+}
+
+.home-page h4 {
+    height: 30px;
+}
+
+.home-page p {
+    height: 50px;
+}
