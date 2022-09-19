@@ -18,46 +18,167 @@
 </head>
 
 <body>
+    <ul class="menu">
+        <li>
+            <a class="round" href="#one"></a>
+        </li>
+        <li>
+            <a class="round" href="#two"></a>
+        </li>
+        <li>
+            <a class="round" href="#three"></a>
+        </li>
+    </ul>
     <div class="heard">
         <p>welcome to my space</p>
     </div>
     <div class="main">
-        <div class="self-show">
-            <img src="./微信图片编辑_20220914104218.jpg" alt="自己图片">
-            <ul>
-                <li>
-                    <p>name: <span>夕雨枫</span> </p>
-                </li>
-                <li>
-                    <p>age： <span>25</span></p>
-                </li>
-                <li>
-                    <p>sex： <span>男</span></p>
-                </li>
-                <li>
-                    <p>Graduated from a college： <span>云南大学滇池学院</span></p>
-                </li>
-                <li>
-                    <p>Specialty： <span>前端 </span></p>
-                </li>
-            </ul>
+        <div id="one" class="onebox" data-0="transform:translateY(0%)" data-800="transform:translateY(-100%)">
+            <div class="self-show">
+                <img src="./微信图片编辑_20220914104218.jpg" alt="自己图片">
+                <ul>
+                    <li>
+                        <p>name: <span>夕雨枫</span> </p>
+                    </li>
+                    <li>
+                        <p>age： <span>25</span></p>
+                    </li>
+                    <li>
+                        <p>sex： <span>男</span></p>
+                    </li>
+                    <li>
+                        <p>Graduated from a college： <span>云南大学滇池学院</span></p>
+                    </li>
+                    <li>
+                        <p>Specialty： <span>前端 </span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="home-page">
+                <div>
+                    <h3>个人经历</h3>
+                    <hr>
+                    <h4>成长经历</h4>
+                    <p>i am king</p>
+                    <hr>
+                    <h4>工作经历</h4>
+                    <p>very good</p>
+                    <hr>
+                    <h4>个人性格</h4>
+                    <p>性格阳光外向，沟通能力强</p>
+
+                </div>
+            </div>
         </div>
-        <div class="home-page">
-            <div>
-                <h3>个人经历</h3>
-                <hr>
-                <h4>成长经历</h4>
-                <p>i am king</p>
-                <hr>
-                <h4>工作经历</h4>
-                <p>very good</p>
-                <hr>
-                <h4>个人性格</h4>
-                <p>性格阳光外向，沟通能力强</p>
+        <div class="twobox" id="two">
+            <div class="directory">
+                <div class="tab-list">
+                    <ul class="current">
+                        <li>关于css</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                    <ul>
+                        <li>关于css</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                    <ul>
+                        <li>关于css</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                    <ul>
+                        <li>关于css</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                    <ul>
+                        <li>关于css</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="item" style="display:block">11</div>
+                    <div class="item">22</div>
+                    <div class="item">33</div>
+                    <div class="item">44</div>
+                    <div class="item">55</div>
+                </div>
+            </div>
+            <div class="content">
 
             </div>
         </div>
+        <div class="threebox" id="three"></div>
     </div>
+
+
+    <script>
+        // 获取起始位置
+        // let scrollTop = document.documentElement.scrollTop
+        // console.log(scrollTop);
+        // // 获取终点位置
+        // let targetElementPosition = document.querySelector('.twobox').offsetTop
+        // window.scrollTo(0, targetElementPosition)
+
+        // 点击高亮
+        let menu = document.querySelector('.menu')
+            // let btn = document.getElementsByClassName('.round')
+        let btn = menu.querySelectorAll('.round')
+            // 先循环拿到每一个按钮进行判断事件
+        for (let i = 0; i < btn.length; i++) {
+
+            btn[i].onclick = function(e) {
+
+                let el = e.target
+
+                //  每次点击先还原
+                for (let i = 0; i < btn.length; i++) {
+
+                    btn[i].className = 'round'
+
+                }
+                // 添加类名
+                el.className = 'round upbtn'
+
+            }
+
+        }
+
+        let tablist = document.querySelector('.tab-list')
+        let uls = tablist.querySelectorAll('ul')
+        let items = document.querySelectorAll('.item')
+        for (let i = 0; i < uls.length; i++) {
+            uls[i].setAttribute('index', i)
+
+            uls[i].onclick = function() {
+
+                for (let i = 0; i < uls.length; i++) {
+                    uls[i].className = ''
+                }
+                this.className = 'current'
+
+                let index = this.getAttribute('index')
+                console.log(index);
+                for (let i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none'
+                }
+                items[index].style.display = 'block'
+            }
+        }
+    </script>
 </body>
 
 </html>
